@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import fetchShow from "../src/api/fetchShow";
+import {fetchShow} from "../src/api/fetchShow";
 import Dropdown from "react-dropdown";
 import parse from "html-react-parser";
 
@@ -18,7 +18,7 @@ export default function App() {
      fetchShow()
       .then((res) => {
         setShow(res.data);
-        setSeasons(formatSeasons(res.data._embedded.episodes));
+        setSeasons(formatSeasons([res.data]));
     });
   });
 
